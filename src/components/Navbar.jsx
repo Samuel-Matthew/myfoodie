@@ -1,9 +1,12 @@
-import { Link, NavLink } from "react-router"
 
-function Navbar() {
+import { Link, NavLink } from "react-router";
+
+function Navbar({ cartCount }) {
     return (
         <header className="navbar">
-            <Link to="/" className="logo">Foodie <span>Hub</span></Link>
+            <Link to="/" className="logo">
+                Foodie<span>Hub.</span>
+            </Link>
 
             <nav className="nav-links">
                 <NavLink to="/">Home</NavLink>
@@ -11,9 +14,11 @@ function Navbar() {
                 <NavLink to="/about">About</NavLink>
             </nav>
 
-            <Link to="/menu" className="cart-button">Cart</Link>
+            <Link to="/menu" className="cart-button">
+                <i className="fa-solid fa-cart-shopping"></i> Cart <span>{cartCount}</span>
+            </Link>
         </header>
-    )
+    );
 }
 
-export default Navbar
+export default Navbar;
